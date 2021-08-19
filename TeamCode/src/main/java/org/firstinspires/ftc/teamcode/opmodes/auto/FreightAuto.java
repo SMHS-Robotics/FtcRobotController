@@ -2,12 +2,10 @@ package org.firstinspires.ftc.teamcode.opmodes.auto;
 
 import com.arcrobotics.ftclib.controller.PIDController;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.hardware.FreightBot;
 
-
-@Autonomous(name = "MoveFoundation", group = "SMHSBots")
+@Autonomous(name = "AutoOp", group = "SMHSFreightBot")
 public class FreightAuto extends LinearOpMode {
     FreightBot robot = new FreightBot();
     PIDController rotateController = new PIDController(0.01, 0.2, 0.0001);
@@ -16,7 +14,7 @@ public class FreightAuto extends LinearOpMode {
     public void runOpMode() {
         robot.init(hardwareMap);
         waitForStart();
-
+        rotate(90);
     }
 
     // negative degrees = right turn, positive = left turn
