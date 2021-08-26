@@ -5,7 +5,6 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.hardware.FreightBot;
 
-
 @Autonomous(name = "FreightAutoSMHS", group = "SMHSBots")
 public class FreightAuto extends LinearOpMode {
     FreightBot robot = new FreightBot();
