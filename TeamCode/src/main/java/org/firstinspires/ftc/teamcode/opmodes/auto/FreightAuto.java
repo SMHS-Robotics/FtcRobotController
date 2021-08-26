@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.hardware.FreightBot;
 
 
-@Autonomous(name = "MoveFoundation", group = "SMHSBots")
+@Autonomous(name = "FreightAutoSMHS", group = "SMHSBots")
 public class FreightAuto extends LinearOpMode {
     FreightBot robot = new FreightBot();
     PIDController rotateController = new PIDController(0.01, 0.2, 0.0001);
@@ -16,14 +16,12 @@ public class FreightAuto extends LinearOpMode {
     public void runOpMode() {
         robot.init(hardwareMap);
         waitForStart();
-
     }
 
     // negative degrees = right turn, positive = left turn
     public void rotate(double degrees) {
-        double rpower = degrees < 0 ? -0.3 : 0.3;
-        final double TURN_TOLERANCE = 0.15;
-
+        double rpower = degrees < 0 ? -0.1 : 0.1;
+        final double TURN_TOLERANCE = 0.05;
         robot.imu.reset();
         robot.drive.stop();
         rotateController.reset();
@@ -33,7 +31,7 @@ public class FreightAuto extends LinearOpMode {
         do {
             robot.drive.driveRobotCentric(0, 0, rpower);
             sleep(50);
-            rpower = rotateController.calculate(robot.imu.getRotation2d().getDegrees());
+            rpower = rotateController.calculate(robot.imu.getRotation2d().getDegrees())/2;
         } while (opModeIsActive() && !rotateController.atSetPoint());
 
         // turn the motors off.

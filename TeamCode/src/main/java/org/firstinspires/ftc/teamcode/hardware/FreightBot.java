@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class FreightBot {
     /* Public OpMode members. */
-    public MotorEx leftBackMotor, rightBackMotor, leftFrontMotor, rightFrontMotor;
+    public Motor leftBackMotor, rightBackMotor, leftFrontMotor, rightFrontMotor;
 
     public MecanumDrive drive;
 
@@ -26,10 +26,10 @@ public class FreightBot {
         hwMap = ahwMap;
 
         // Define and Initialize Motors
-        leftBackMotor = new MotorEx(hwMap, "left_drive");
-        rightBackMotor = new MotorEx(hwMap, "right_drive");
-        leftFrontMotor = new MotorEx(hwMap, "left_drive_front");
-        rightFrontMotor = new MotorEx(hwMap, "right_drive_front");
+        leftBackMotor = new Motor(hwMap, "left_drive");
+        rightBackMotor = new Motor(hwMap, "right_drive");
+        leftFrontMotor = new Motor(hwMap, "left_drive_front");
+        rightFrontMotor = new Motor(hwMap, "right_drive_front");
 
         drive = new MecanumDrive(leftFrontMotor, rightFrontMotor, leftBackMotor, rightBackMotor);
 
