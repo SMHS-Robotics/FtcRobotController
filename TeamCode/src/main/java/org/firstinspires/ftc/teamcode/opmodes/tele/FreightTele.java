@@ -6,11 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.hardware.FreightBot;
 
-<<<<<<< HEAD
 @TeleOp(name = "FreightTeleSMHS", group = "FreightBot")
-=======
-@TeleOp(name = "TeleOp", group = "SMHSFreightBot")
->>>>>>> 9273d81ec94348873503c687d6b3e9f903660ec7
 public class FreightTele extends LinearOpMode {
     FreightBot robot = new FreightBot();
     GamepadEx control1, control2;
