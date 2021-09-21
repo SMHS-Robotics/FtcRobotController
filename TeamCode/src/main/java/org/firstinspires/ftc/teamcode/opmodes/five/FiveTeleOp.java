@@ -1,7 +1,5 @@
 package org.firstinspires.ftc.teamcode.opmodes.five;
 
-import com.arcrobotics.ftclib.gamepad.GamepadEx;
-import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -10,7 +8,6 @@ import org.firstinspires.ftc.teamcode.hardware.FiveBot;
 @TeleOp(name = "FiveTeleSMHS", group = "FreightBot")
 public class FiveTeleOp extends LinearOpMode {
     FiveBot bot = new FiveBot();
-    GamepadEx control1;
 
     @Override
     public void runOpMode() {
