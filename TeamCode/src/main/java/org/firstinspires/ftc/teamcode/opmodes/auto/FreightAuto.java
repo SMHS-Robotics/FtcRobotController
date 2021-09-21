@@ -14,12 +14,15 @@ public class FreightAuto extends LinearOpMode {
     public void runOpMode() {
         robot.init(hardwareMap);
         waitForStart();
-        rotate(90);
+        robot.rightFrontMotor.set(0.5);
+        sleep(5000);
+        robot.rightFrontMotor.stopMotor();
     }
 
     // negative degrees = right turn, positive = left turn
     public void rotate(double degrees) {
-        double rpower = degrees < 0 ? -0.1 : 0.1;
+        double basepower = 0.4;
+        double rpower = degrees < 0 ? -basepower : basepower;
         final double TURN_TOLERANCE = 0.05;
         robot.imu.reset();
         robot.drive.stop();
@@ -30,7 +33,7 @@ public class FreightAuto extends LinearOpMode {
         do {
             robot.drive.driveRobotCentric(0, 0, rpower);
             sleep(50);
-            rpower = rotateController.calculate(robot.imu.getRotation2d().getDegrees())/2;
+            rpower = rotateController.calculate(robot.imu.getRotation2d().getDegrees()) * basepower;
         } while (opModeIsActive() && !rotateController.atSetPoint());
 
         // turn the motors off.
