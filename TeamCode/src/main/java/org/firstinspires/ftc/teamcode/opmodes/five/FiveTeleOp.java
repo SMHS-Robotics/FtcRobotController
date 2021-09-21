@@ -20,7 +20,7 @@ public class FiveTeleOp extends LinearOpMode {
         bot.handServo.turnToAngle(0);
         bot.sanitizerServo.turnToAngle(0);
 
-        control1 = new GamepadEx(gamepad1);
+        control1 = new GamepadEx(gamepad2);
         while (opModeIsActive()) {
             if (control1.getTrigger(GamepadKeys.Trigger.RIGHT_TRIGGER) > 0.5) {
                 bot.handServo.turnToAngle(90);
