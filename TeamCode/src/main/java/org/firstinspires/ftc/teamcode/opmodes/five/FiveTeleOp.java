@@ -18,13 +18,18 @@ public class FiveTeleOp extends LinearOpMode {
         bot.sanitizerServo.turnToAngle(0);
 
         while (opModeIsActive()) {
-            if (gamepad2.right_trigger > 0.5) {
+            telemetry.addLine("begin run:");
+            if (gamepad1.right_trigger > 0.3) {
+                telemetry.addLine("right trigger!");
                 bot.handServo.turnToAngle(90);
-            } else if (gamepad2.left_trigger > 0.5) {
+            } else if (gamepad1.left_trigger > 0.3) {
+                telemetry.addLine("left trigger!");
                 bot.sanitizerServo.turnToAngle(90);
-            } else if (gamepad2.right_bumper) {
+            } else if (gamepad1.right_bumper) {
+                telemetry.addLine("right bumper!");
                 bot.handServo.turnToAngle(0);
-            } else if (gamepad2.left_bumper) {
+            } else if (gamepad1.left_bumper) {
+                telemetry.addLine("left bumper!");
                 bot.sanitizerServo.turnToAngle(0);
             }
         }
