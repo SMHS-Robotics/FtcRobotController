@@ -20,6 +20,6 @@ public class FiveBot {
         hwMap = ahwMap;
 
         handServo = new SimpleServo(hwMap, "hand", 0, 360);
-        sanitizerServo = new SimpleServo(hwMap, "sanitizer", 0, 360);
+        sanitizerServo = new SimpleServo(hwMap, "sanitizer", 0, 180);
     }
 }
